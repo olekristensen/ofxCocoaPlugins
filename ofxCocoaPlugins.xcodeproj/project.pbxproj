@@ -159,6 +159,10 @@
 		3DAFD3DB14B470F9004D0D50 /* AVTCamerasController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3DAFD3D914B470F9004D0D50 /* AVTCamerasController.mm */; };
 		3DCAC6A214C47B5B0022F715 /* ofCvCameraCalibration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DCAC6A114C47B5B0022F715 /* ofCvCameraCalibration.cpp */; };
 		3DCAC6A414C47B680022F715 /* ofCvCameraCalibration.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DCAC6A314C47B680022F715 /* ofCvCameraCalibration.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7AD1C47E187B40D90054B8D7 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD1C47D187B40D90054B8D7 /* ScriptingBridge.framework */; };
+		7AD1C47F187B40D90054B8D7 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD1C47D187B40D90054B8D7 /* ScriptingBridge.framework */; };
+		7AD1C481187B40E90054B8D7 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD1C480187B40E90054B8D7 /* CoreVideo.framework */; };
+		7AD1C482187B40E90054B8D7 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD1C480187B40E90054B8D7 /* CoreVideo.framework */; };
 		7FB6BAA41499F75000FE24C9 /* KeystonePerspective.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FB6BAA21499F75000FE24C9 /* KeystonePerspective.h */; };
 		7FB6BAA51499F75000FE24C9 /* KeystonePerspective.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7FB6BAA31499F75000FE24C9 /* KeystonePerspective.mm */; };
 		8444623B1555664C00F66DCC /* ColorProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 844462391555664C00F66DCC /* ColorProperty.h */; };
@@ -463,7 +467,6 @@
 		DDAF916C161C3D5400790729 /* Tracker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847E9E7615248C6D00710E6E /* Tracker.xib */; };
 		DDAF916D161C3D5400790729 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 84BE4C281526029400FE8731 /* .gitignore */; };
 		DDAF916E161C3D5400790729 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 84BE4C291526029400FE8731 /* README */; };
-		DDAF9173161C3D5400790729 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE4C8761451A91200EECFF4 /* CoreVideo.framework */; };
 		DDAF9174161C3D5400790729 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE4C8771451A91200EECFF4 /* AppKit.framework */; };
 		DDAF9175161C3D5400790729 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE4C8781451A91200EECFF4 /* Cocoa.framework */; };
 		DDAF9176161C3D5400790729 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE4C8791451A91200EECFF4 /* IOKit.framework */; };
@@ -480,7 +483,6 @@
 		DDAF9181161C3D5400790729 /* osc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE4C94E1451DC1500EECFF4 /* osc.a */; };
 		DDAF9182161C3D5400790729 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE4C9B11451E12E00EECFF4 /* QTKit.framework */; };
 		DDAF9183161C3D5400790729 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE4C9B31451E14100EECFF4 /* QuartzCore.framework */; };
-		DDAF9184161C3D5400790729 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE4C9B51451E15F00EECFF4 /* ScriptingBridge.framework */; };
 		DDAF9185161C3D5400790729 /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE4CAA21451E32700EECFF4 /* CoreMIDI.framework */; };
 		DDAF9186161C3D5400790729 /* opencv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD0A34551452F2CC00CC89E5 /* opencv.a */; };
 		DDAF9187161C3D5400790729 /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE4D5D61451F3AF00EECFF4 /* openFrameworksDebug.a */; };
@@ -827,7 +829,6 @@
 		DDC266AF1454BC020016BA7B /* GeneralPreferences.h in Headers */ = {isa = PBXBuildFile; fileRef = DDC266AC1454BC020016BA7B /* GeneralPreferences.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DDC266B01454BC020016BA7B /* GeneralPreferences.mm in Sources */ = {isa = PBXBuildFile; fileRef = DDC266AD1454BC020016BA7B /* GeneralPreferences.mm */; };
 		DDC266B11454BC020016BA7B /* GeneralPreferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDC266AE1454BC020016BA7B /* GeneralPreferences.xib */; };
-		DDE4C8831451A91200EECFF4 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE4C8761451A91200EECFF4 /* CoreVideo.framework */; };
 		DDE4C8841451A91200EECFF4 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE4C8771451A91200EECFF4 /* AppKit.framework */; };
 		DDE4C8851451A91200EECFF4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE4C8781451A91200EECFF4 /* Cocoa.framework */; };
 		DDE4C8861451A91200EECFF4 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE4C8791451A91200EECFF4 /* IOKit.framework */; };
@@ -911,7 +912,6 @@
 		DDE4C9B01451E05100EECFF4 /* PluginOpenGLControlView.mm in Sources */ = {isa = PBXBuildFile; fileRef = DDE4C9AE1451E05100EECFF4 /* PluginOpenGLControlView.mm */; };
 		DDE4C9B21451E12E00EECFF4 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE4C9B11451E12E00EECFF4 /* QTKit.framework */; };
 		DDE4C9B41451E14100EECFF4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE4C9B31451E14100EECFF4 /* QuartzCore.framework */; };
-		DDE4C9B61451E15F00EECFF4 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE4C9B51451E15F00EECFF4 /* ScriptingBridge.framework */; };
 		DDE4CA851451E23800EECFF4 /* Midi.h in Headers */ = {isa = PBXBuildFile; fileRef = DDE4CA161451E23700EECFF4 /* Midi.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DDE4CA861451E23800EECFF4 /* Midi.mm in Sources */ = {isa = PBXBuildFile; fileRef = DDE4CA171451E23700EECFF4 /* Midi.mm */; };
 		DDE4CA871451E23800EECFF4 /* Midi.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDE4CA181451E23700EECFF4 /* Midi.xib */; };
@@ -1210,6 +1210,8 @@
 		3DAFD3D914B470F9004D0D50 /* AVTCamerasController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AVTCamerasController.mm; sourceTree = "<group>"; };
 		3DCAC6A114C47B5B0022F715 /* ofCvCameraCalibration.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = ofCvCameraCalibration.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		3DCAC6A314C47B680022F715 /* ofCvCameraCalibration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ofCvCameraCalibration.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		7AD1C47D187B40D90054B8D7 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = /Users/olek/Development/ofxCocoaPlugins/../../../../System/Library/Frameworks/ScriptingBridge.framework; sourceTree = "<absolute>"; };
+		7AD1C480187B40E90054B8D7 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = /Users/olek/Development/ofxCocoaPlugins/../../../../System/Library/Frameworks/CoreVideo.framework; sourceTree = "<absolute>"; };
 		7FB6BAA21499F75000FE24C9 /* KeystonePerspective.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeystonePerspective.h; sourceTree = "<group>"; };
 		7FB6BAA31499F75000FE24C9 /* KeystonePerspective.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = KeystonePerspective.mm; sourceTree = "<group>"; };
 		844462391555664C00F66DCC /* ColorProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorProperty.h; sourceTree = "<group>"; };
@@ -1423,7 +1425,6 @@
 		DDC266AC1454BC020016BA7B /* GeneralPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneralPreferences.h; sourceTree = "<group>"; };
 		DDC266AD1454BC020016BA7B /* GeneralPreferences.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GeneralPreferences.mm; sourceTree = "<group>"; };
 		DDC266AE1454BC020016BA7B /* GeneralPreferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GeneralPreferences.xib; sourceTree = "<group>"; };
-		DDE4C8761451A91200EECFF4 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		DDE4C8771451A91200EECFF4 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		DDE4C8781451A91200EECFF4 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		DDE4C8791451A91200EECFF4 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
@@ -1507,7 +1508,6 @@
 		DDE4C9AE1451E05100EECFF4 /* PluginOpenGLControlView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PluginOpenGLControlView.mm; sourceTree = "<group>"; };
 		DDE4C9B11451E12E00EECFF4 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = /System/Library/Frameworks/QTKit.framework; sourceTree = "<absolute>"; };
 		DDE4C9B31451E14100EECFF4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
-		DDE4C9B51451E15F00EECFF4 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		DDE4CA161451E23700EECFF4 /* Midi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Midi.h; sourceTree = "<group>"; };
 		DDE4CA171451E23700EECFF4 /* Midi.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Midi.mm; sourceTree = "<group>"; };
 		DDE4CA181451E23700EECFF4 /* Midi.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Midi.xib; sourceTree = "<group>"; };
@@ -1547,7 +1547,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDE4C8831451A91200EECFF4 /* CoreVideo.framework in Frameworks */,
 				DDE4C8841451A91200EECFF4 /* AppKit.framework in Frameworks */,
 				DDE4C8851451A91200EECFF4 /* Cocoa.framework in Frameworks */,
 				DDE4C8861451A91200EECFF4 /* IOKit.framework in Frameworks */,
@@ -1555,6 +1554,8 @@
 				DDE4C8881451A91200EECFF4 /* ApplicationServices.framework in Frameworks */,
 				DDE4C8891451A91300EECFF4 /* AudioToolbox.framework in Frameworks */,
 				DDE4C88A1451A91300EECFF4 /* Carbon.framework in Frameworks */,
+				7AD1C47E187B40D90054B8D7 /* ScriptingBridge.framework in Frameworks */,
+				7AD1C481187B40E90054B8D7 /* CoreVideo.framework in Frameworks */,
 				DDE4C88B1451A91300EECFF4 /* CoreAudio.framework in Frameworks */,
 				DDE4C88C1451A91300EECFF4 /* CoreFoundation.framework in Frameworks */,
 				DDE4C88D1451A91300EECFF4 /* CoreServices.framework in Frameworks */,
@@ -1564,7 +1565,6 @@
 				DDE4C9721451DC1500EECFF4 /* osc.a in Frameworks */,
 				DDE4C9B21451E12E00EECFF4 /* QTKit.framework in Frameworks */,
 				DDE4C9B41451E14100EECFF4 /* QuartzCore.framework in Frameworks */,
-				DDE4C9B61451E15F00EECFF4 /* ScriptingBridge.framework in Frameworks */,
 				DDE4CAA31451E32700EECFF4 /* CoreMIDI.framework in Frameworks */,
 				DD0A351B1452F2CE00CC89E5 /* opencv.a in Frameworks */,
 				DDE4D5D71451F3AF00EECFF4 /* openFrameworksDebug.a in Frameworks */,
@@ -1578,7 +1578,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDAF9173161C3D5400790729 /* CoreVideo.framework in Frameworks */,
 				DDAF9174161C3D5400790729 /* AppKit.framework in Frameworks */,
 				DDAF9175161C3D5400790729 /* Cocoa.framework in Frameworks */,
 				DDAF9176161C3D5400790729 /* IOKit.framework in Frameworks */,
@@ -1586,6 +1585,8 @@
 				DDAF9178161C3D5400790729 /* ApplicationServices.framework in Frameworks */,
 				DDAF9179161C3D5400790729 /* AudioToolbox.framework in Frameworks */,
 				DDAF917A161C3D5400790729 /* Carbon.framework in Frameworks */,
+				7AD1C47F187B40D90054B8D7 /* ScriptingBridge.framework in Frameworks */,
+				7AD1C482187B40E90054B8D7 /* CoreVideo.framework in Frameworks */,
 				DDAF917B161C3D5400790729 /* CoreAudio.framework in Frameworks */,
 				DDAF917C161C3D5400790729 /* CoreFoundation.framework in Frameworks */,
 				DDAF917D161C3D5400790729 /* CoreServices.framework in Frameworks */,
@@ -1595,7 +1596,6 @@
 				DDAF9181161C3D5400790729 /* osc.a in Frameworks */,
 				DDAF9182161C3D5400790729 /* QTKit.framework in Frameworks */,
 				DDAF9183161C3D5400790729 /* QuartzCore.framework in Frameworks */,
-				DDAF9184161C3D5400790729 /* ScriptingBridge.framework in Frameworks */,
 				DDAF9185161C3D5400790729 /* CoreMIDI.framework in Frameworks */,
 				DDAF9186161C3D5400790729 /* opencv.a in Frameworks */,
 				DDAF9187161C3D5400790729 /* openFrameworksDebug.a in Frameworks */,
@@ -2366,12 +2366,12 @@
 		DDA7FFDA144F1C3800F81C9E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7AD1C480187B40E90054B8D7 /* CoreVideo.framework */,
+				7AD1C47D187B40D90054B8D7 /* ScriptingBridge.framework */,
 				DDE4CAA21451E32700EECFF4 /* CoreMIDI.framework */,
-				DDE4C9B51451E15F00EECFF4 /* ScriptingBridge.framework */,
 				DDE4C9B31451E14100EECFF4 /* QuartzCore.framework */,
 				DDE4C9B11451E12E00EECFF4 /* QTKit.framework */,
 				DDE4C8E91451C97300EECFF4 /* GLUT.framework */,
-				DDE4C8761451A91200EECFF4 /* CoreVideo.framework */,
 				DDE4C8771451A91200EECFF4 /* AppKit.framework */,
 				DDE4C8781451A91200EECFF4 /* Cocoa.framework */,
 				DDE4C8791451A91200EECFF4 /* IOKit.framework */,
@@ -3350,6 +3350,8 @@
 /* Begin PBXProject section */
 		DDA7FFCE144F1C3800F81C9E /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+			};
 			buildConfigurationList = DDA7FFD1144F1C3800F81C9E /* Build configuration list for PBXProject "ofxCocoaPlugins" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;

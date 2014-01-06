@@ -4,3 +4,6 @@
 [submodule "ofxCocoaPlugins/libs/Addons/ofxCvOpticalFlowLK"]
 	path = ofxCocoaPlugins/libs/Addons/ofxCvOpticalFlowLK
 	url = https://github.com/Flightphase/ofxCvOpticalFlowLK.git
+[submodule "ofxCocoaPlugins/libs/jscocoa"]
+        path = ofxCocoaPlugins/libs/jscocoa
+        url = https://github.com/parmanoir/jscocoa.git
