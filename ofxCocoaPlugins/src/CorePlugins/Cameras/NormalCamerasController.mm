@@ -9,7 +9,6 @@
 -(NSMutableArray*) deviceList{
 	NSMutableArray * ret = [NSMutableArray array];
     
-	
 	OSErr err = noErr;
 	
 	ComponentDescription	theDesc;

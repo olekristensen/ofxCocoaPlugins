@@ -1,4 +1,4 @@
-#include "GL/glew.h"
+//#include "GL/glew.h"
 
 #import "PluginProperty.h"
 #import "PluginManagerController.h"

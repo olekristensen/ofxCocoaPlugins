@@ -1,16 +1,20 @@
 //THE PATH TO THE ROOT OF OUR OF PATH RELATIVE TO THIS PROJECT.
 //THIS NEEDS TO BE DEFINED BEFORE CoreOF.xcconfig IS INCLUDED
 OFX_PATH = $(SOURCE_ROOT)/
-OF_PATH = $(OFX_PATH)ofxCocoaPlugins/libs/openFrameworks
+OF_PATH = $(OFX_PATH)ofxCocoaPlugins/libs/openframeworks
 
 //THIS HAS ALL THE HEADER AND LIBS FOR OF CORE
-#include "ofxCocoaPlugins/libs/openFrameworks/libs/openFrameworksCompiled/project/osx/CoreOF.xcconfig"
+
+#include "ofxCocoaPlugins/libs/openframeworks/libs/openFrameworksCompiled/project/osx/CoreOF.xcconfig"
 
 HEADER_OPENCV = "$(OF_PATH)/addons/ofxOpenCv/libs/opencv/include/" "$(OF_PATH)/addons/ofxOpenCv/libs/opencv/include/opencv" "$(OF_PATH)/addons/ofxOpenCv/src" 
+HEADER_LIBDC1394 = "$(SOURCE_ROOT)/ofxCocoaPlugins/src/CorePlugins/Cameras/ofxVideoGrabber/osx/include"
 
+LIB_OPENCV = "$(OF_PATH)/addons/ofxOpenCv/libs/opencv/lib/osx/opencv.a"
 
-
-OTHER_LDFLAGS = $(OF_CORE_LIBS) $(LIB_OPENCV)  -headerpad_max_install_names
+OTHER_LDFLAGS =  -headerpad_max_install_names $(OF_CORE_LIBS) $(LIB_OPENCV)
 HEADER_SEARCH_PATHS = $(OF_CORE_HEADERS)
 
-USER_HEADER_SEARCH_PATHS = $(HEADER_OPENCV) 
+USER_HEADER_SEARCH_PATHS = $(HEADER_OPENCV) $(HEADER_LIBDC1394)
+
+LIBRARY_SEARCH_PATHS = "$(SRCROOT)/ofxCocoaPlugins/src/CorePlugins/Cameras/ofxVideoGrabber/osx/lib" "$(OF_PATH)/libs/openFrameworksCompiled/lib/osx"  "$(OF_PATH)/addons/ofxOsc/libs/oscpack/lib/osx"  "$(OF_PATH)/libs/fmodex/lib/osx"  "$(OF_PATH)/libs/assimp/lib/osx"  "$(OF_PATH)/libs/cairo/lib/osx"  "$(OF_PATH)/libs/FreeImage/lib/osx"  "$(OF_PATH)/libs/freetype/lib/osx"  "$(OF_PATH)/libs/glew/lib/osx"  "$(OF_PATH)/libs/poco/lib/osx"  "$(OF_PATH)/libs/rtAudio/lib/osx"  "$(OF_PATH)/libs/tess2/lib/osx"  "$(OF_PATH)/addons/ofxOpenCv/libs/opencv/lib/osx"  "$(SRCROOT)/ofxCocoaPlugins/libs/PvAPI/lib-pc/x86/4.2"  "$(SRCROOT)/ofxCocoaPlugins/src/CorePlugins/OpenDMX/ola"  "$(SRCROOT)/ofxCocoaPlugins/src/CorePlugins/OpenDMX"  "/usr/local/lib"  "/Users/olek/Development/ofxCocoaPlugins/ofxCocoaPlugins/libs/openframeworks/addons/ofxOpenCv/libs/opencv/lib/osx"

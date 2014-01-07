@@ -18,11 +18,18 @@ static void KeyArrayCallback(const void *key, const void *value, void *context) 
 //Code to get the names of the displays
 CFStringRef CopyLocalDisplayName(CGDirectDisplayID display)
 {
+    
     CFArrayRef          langKeys, orderLangKeys;
     CFStringRef        langKey, localName;
     io_connect_t displayPort;
     CFDictionaryRef dict, names;
 	
+    // ØF
+    localName = (__bridge CFStringRef)[NSString stringWithFormat:@"%d",display]; // dirty hack to get name
+    CFRetain( localName );
+    return localName;
+    // slut øf
+    
     localName = NULL;
     displayPort = CGDisplayIOServicePort(display);
     if ( displayPort == MACH_PORT_NULL )

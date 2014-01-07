@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7AC5149F187BB48D00956B3D /* libfmodex.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7AC5149E187BB48D00956B3D /* libfmodex.dylib */; };
 		DD0A3585145437B500CC89E5 /* ExamplePlugin.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD0A3583145437B500CC89E5 /* ExamplePlugin.mm */; };
 		DD0A3586145437B500CC89E5 /* ExamplePlugin.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD0A3584145437B500CC89E5 /* ExamplePlugin.xib */; };
 		DD0A3688145441AB00CC89E5 /* Project.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = DD0A3687145441AB00CC89E5 /* Project.xcconfig */; };
@@ -28,6 +29,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		7AC5149B187BA8B500956B3D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DD9EA903144F324800E313C0 /* ofxCocoaPlugins.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = DDA7FFD7144F1C3800F81C9E;
+			remoteInfo = ofxCocoaPlugins;
+		};
 		DD9EA90A144F324800E313C0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DD9EA903144F324800E313C0 /* ofxCocoaPlugins.xcodeproj */;
@@ -38,6 +46,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		7AC5149D187BB3CB00956B3D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 6;
+			files = (
+				7AC5149F187BB48D00956B3D /* libfmodex.dylib in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DDA7006B144F277900F81C9E /* Copy Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -52,6 +70,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7AC5149E187BB48D00956B3D /* libfmodex.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfmodex.dylib; path = ../ofxCocoaPlugins/libs/openframeworks/libs/fmodex/lib/osx/libfmodex.dylib; sourceTree = "<group>"; };
 		DD0A3582145437B500CC89E5 /* ExamplePlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExamplePlugin.h; sourceTree = "<group>"; };
 		DD0A3583145437B500CC89E5 /* ExamplePlugin.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ExamplePlugin.mm; sourceTree = "<group>"; };
 		DD0A3584145437B500CC89E5 /* ExamplePlugin.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExamplePlugin.xib; sourceTree = "<group>"; };
@@ -179,6 +198,7 @@
 		DDA7FFF6144F1CEE00F81C9E = {
 			isa = PBXGroup;
 			children = (
+				7AC5149E187BB48D00956B3D /* libfmodex.dylib */,
 				DD0A3687145441AB00CC89E5 /* Project.xcconfig */,
 				DD9EA903144F324800E313C0 /* ofxCocoaPlugins.xcodeproj */,
 				DDA7000B144F1CEE00F81C9E /* Example */,
@@ -194,14 +214,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DDA7001F144F1CEF00F81C9E /* Build configuration list for PBXNativeTarget "Example" */;
 			buildPhases = (
+				7AC5149D187BB3CB00956B3D /* CopyFiles */,
 				DDA7FFFD144F1CEE00F81C9E /* Sources */,
 				DDA7FFFE144F1CEE00F81C9E /* Frameworks */,
 				DDA7FFFF144F1CEE00F81C9E /* Resources */,
 				DDA7006B144F277900F81C9E /* Copy Frameworks */,
+				7AC514A0187BB53900956B3D /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				7AC5149C187BA8B500956B3D /* PBXTargetDependency */,
 			);
 			name = Example;
 			productName = Example;
@@ -213,6 +236,8 @@
 /* Begin PBXProject section */
 		DDA7FFF8144F1CEE00F81C9E /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+			};
 			buildConfigurationList = DDA7FFFB144F1CEE00F81C9E /* Build configuration list for PBXProject "Example" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -260,6 +285,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7AC514A0187BB53900956B3D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "install_name_tool -change ./libfmodex.dylib @executable_path/libfmodex.dylib \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/$PRODUCT_NAME\" ;";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DDA7FFFD144F1CEE00F81C9E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -272,6 +313,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7AC5149C187BA8B500956B3D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ofxCocoaPlugins;
+			targetProxy = 7AC5149B187BA8B500956B3D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		DDA7000E144F1CEE00F81C9E /* InfoPlist.strings */ = {
@@ -311,7 +360,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = NO;
-				SDKROOT = macosx10.7;
+				SDKROOT = macosx10.9;
 			};
 			name = Debug;
 		};
@@ -335,7 +384,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = NO;
-				SDKROOT = macosx10.7;
+				SDKROOT = macosx10.9;
 			};
 			name = Release;
 		};

@@ -1,4 +1,4 @@
-#include "GL/glew.h"
+//#include "GL/glew.h"
 
 #import "BoolProperty.h"
 #import "QlabController.h"

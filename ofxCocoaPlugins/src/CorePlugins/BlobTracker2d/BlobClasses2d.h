@@ -11,8 +11,7 @@
 	ofVec2f * centroid;
     ofVec2f * feet;
 	ofVec2f * lastcentroid;
-	ofVec2f   * centroidV;
-	
+	ofVec2f * centroidV;
 	
 	int timeoutCounter;
 	NSMutableArray * blobs;

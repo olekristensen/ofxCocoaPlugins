@@ -8,7 +8,7 @@
 
 #import "BlobTrackerInstance2d.h"
 
-#import "QTKitMovieRenderer.h"
+//#import "QTKitMovieRenderer.h"
 #import "Keystoner.h"
 #import "KeystoneSurface.h"
 #import "ofxOpenCv.h"
@@ -346,16 +346,15 @@
     
     //Clear blobs
     for(pblob in persistentBlobs){
-        ofVec2f p = pblob->centroid - pblob->lastcentroid;
+        ofVec2f p = *(pblob->centroid) - *(pblob->lastcentroid);
         pblob->centroidV->x = p.x;
         pblob->centroidV->y = p.y;
-        pblob->lastcentroid = pblob->centroid ;
+        pblob->lastcentroid = pblob->centroid;
         [pblob->blobs removeAllObjects];
     }
     
-    
-    
     [blobs removeAllObjects];
+
     {
         //if(!mouseEvent){
         

@@ -230,9 +230,9 @@
         case 3:
             return [self surfaceToCamera:ofVec2f(0,1)];
             break;            
-        default:
-            return nil;
-            break;
+//        default:
+//            return nil;
+//            break;
     }  
     
 }

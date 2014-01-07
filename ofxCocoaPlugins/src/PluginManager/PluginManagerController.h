@@ -1,5 +1,5 @@
 #pragma once
-#include "GL/glew.h"
+//#include "GL/glew.h"
 
 #import <Cocoa/Cocoa.h>
 #import <QuartzCore/QuartzCore.h>
