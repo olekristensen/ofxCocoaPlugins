@@ -27,7 +27,7 @@
 @property (retain) NSString * name;
 @property (retain) NSString * pluginName;
 
-@property (retain, atomic) id value;
+@property (retain) id value;
 @property (retain) id defaultValue;
 @property (readwrite) int controlType;
 @property (readwrite) BOOL forcedMidiNumber;

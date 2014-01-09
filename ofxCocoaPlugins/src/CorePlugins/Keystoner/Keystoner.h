@@ -39,7 +39,7 @@
 @class KeystonerOutputview;
 @class TrackingLayer;
 @class KeystonePerspective;
-//@class KeystoneSurface;
+@class KeystoneSurface;
 @class KeystoneProjector;
 
 @interface Keystoner : ofPlugin {

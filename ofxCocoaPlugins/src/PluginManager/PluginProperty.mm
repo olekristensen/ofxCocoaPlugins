@@ -21,17 +21,24 @@ static NSString *MidiControllerContext = @"org.ofx.midi.controller";
 }
 
 -(void) dealloc{
-	[value release];
-	[defaultValue release];
-	[midiChannel release];
-	[midiNumber release];
-	[name release];
+    @synchronized(self){
+    if(value != nil)
+        [value release];
+    if(defaultValue != nil)
+        [defaultValue release];
+    if(midiChannel != nil)
+        [midiChannel release];
+	if(midiNumber != nil)
+        [midiNumber release];
+	if(name != nil)
+        [name release];
+    }
 	[super dealloc];
 }
 
 -(void)setValue:(id)_value{
     @synchronized(self){
-        value = _value;
+        value = [_value retain];
     }
 }
 

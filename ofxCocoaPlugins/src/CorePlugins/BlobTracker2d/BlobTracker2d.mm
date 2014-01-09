@@ -10,7 +10,7 @@
 @implementation BlobTracker2d
 
 -(void)initPlugin{
-    instances = [NSMutableArray array];
+    instances = [[NSMutableArray array] retain];
     int i=0;
 
 #ifdef USE_KINECT_2D_TRACKER
@@ -25,7 +25,7 @@
     }
 #endif
     for(Camera * cam in [GetPlugin(Cameras) cameras]){
-        BlobTrackerInstance2d * newInstance = [[BlobTrackerInstance2d alloc] init];
+        BlobTrackerInstance2d * newInstance = [[[BlobTrackerInstance2d alloc] init] retain];
         [newInstance setCameraInstance:cam];
         [newInstance setTrackerNumber:i];
         [newInstance setCalibrator:[GetPlugin(CameraCalibration) calibrationForCamera:cam surface:@"Floor"]];
@@ -117,7 +117,7 @@
         i++;
     }
     
-    [[self controlGlView] setFrame:NSMakeRect([[self view]bounds].origin.x, [[self view]bounds].origin.y, 800, controlHeight*number)];    
+    [(PluginOpenGLControlView *)[self controlGlView] setFrame:NSMakeRect([[self view]bounds].origin.x, [[self view]bounds].origin.y, 800, controlHeight*number)];
 }
 
 -(void)customPropertiesLoaded{		

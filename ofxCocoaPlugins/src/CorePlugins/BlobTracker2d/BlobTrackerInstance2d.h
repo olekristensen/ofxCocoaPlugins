@@ -97,9 +97,9 @@ enum SubtractionModes {
 }
 
 @property (assign)      IBOutlet NSView *view;
-@property (readonly)    NSString * name;
+@property (readonly, retain)    NSString * name;
 @property (retain)      NSMutableDictionary * properties;
-@property (assign)      id cameraInstance;
+@property (assign, nonatomic)      id cameraInstance;
 
 @property (readonly)    ofxCvGrayscaleImage *	grayDiff;
 @property (readonly)    ofxCvGrayscaleImage *	grayBg;

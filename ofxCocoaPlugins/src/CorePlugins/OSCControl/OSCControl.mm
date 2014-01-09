@@ -300,7 +300,7 @@ NSString * SplitcapitalString(NSString *str)
 
             [plugin.properties enumerateKeysAndObjectsUsingBlock:^(id key, PluginProperty* obj, BOOL *stop) {
                 float d = 0.1/8.0;
-                for(int i=0;i<8;i++){
+/*                for(int i=0;i<8;i++){
                     if([obj.midiChannel intValue] == 1 && [obj.midiNumber intValue] == i){
 //                        NSLog(@"Bind %@",obj);
                         [self addFader:obj.name bounds:NSMakeRect(0, i*1.0/8.0+d, 0.125, 1.0/8.0-2*d) bindedTo:obj sendIt:sendIt];
@@ -309,7 +309,7 @@ NSString * SplitcapitalString(NSString *str)
                         
                     }
                 }
-                
+  */
                 for(int i=16;i<24;i++){
                     if([obj.midiChannel intValue] == 1 && [obj.midiNumber intValue] == i){
                         //                        NSLog(@"Bind %@",obj);

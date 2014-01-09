@@ -28,7 +28,7 @@
 +(NumberProperty*)sliderPropertyWithDefaultvalue:(float)defValue minValue:(float)min maxValue:(float)max{
 	static NumberProperty * prop = nil;
 	prop = [[[NumberProperty alloc] init] autorelease];
-	[prop setValue:[[NSNumber numberWithFloat:defValue] autorelease]];
+	[prop setValue:[[NSNumber numberWithFloat:defValue] retain]];
 	[prop setDefaultValue: [NSNumber numberWithFloat:defValue]];
 	
 	[prop setMinValue: min];

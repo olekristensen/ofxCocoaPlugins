@@ -16,7 +16,7 @@
 		willDraw = YES;
 		surfaces = [[NSArray arrayWithArray:_surfaces] retain];
         
-        perspectives = [NSMutableDictionary dictionary];
+        perspectives = [[NSMutableDictionary dictionary] retain];
         
         for(NSString* surfaceName in surfaces){
             [perspectives setObject:[KeystonePerspective perspectiveWithSurfaceName:surfaceName] forKey:surfaceName];

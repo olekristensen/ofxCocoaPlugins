@@ -35,9 +35,9 @@ extern ofAppBaseWindow * window;
 		setupAppCalled = NO;
 		previews = YES;
 		
-		//NSBundle *bundle = [NSBundle mainBundle];
-		//ofSetDataPathRoot([[[[bundle bundlePath] stringByDeletingLastPathComponent] stringByAppendingString:@"/data/"] cStringUsingEncoding:NSUTF8StringEncoding]);
-        ofSetDataPathRoot("../../../data/");
+		NSBundle *bundle = [NSBundle mainBundle];
+		ofSetDataPathRoot([[[[bundle bundlePath] stringByDeletingLastPathComponent] stringByAppendingString:@"/data/"] cStringUsingEncoding:NSUTF8StringEncoding]);
+        //ofSetDataPathRoot("../../../../data/");
         ofSeedRandom();
         ofResetElapsedTimeCounter();
 

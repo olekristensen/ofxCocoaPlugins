@@ -29,9 +29,9 @@
     self = [super init];
     if (self) {
 		
-		thread = [[NSThread alloc] initWithTarget:self
+		thread = [[[NSThread alloc] initWithTarget:self
 										 selector:@selector(startBackgroundThread:)
-										   object:nil];
+										   object:nil] retain];
         pthread_mutex_init(&mutex, NULL);
         threadUpdateContour = NO;
 		loadBackgroundNow = NO;
@@ -40,7 +40,7 @@
 		blobs = [[NSMutableArray array] retain];
 		pidCounter = 0;
         
-        properties = [NSMutableDictionary dictionary];
+        properties = [[NSMutableDictionary dictionary] retain];
         [properties setObject:[NSNumber numberWithFloat:5.0] forKey:@"persistentDistance"];
         [properties setObject:[NSNumber numberWithFloat:1] forKey:@"blur"];
         [properties setObject:[NSNumber numberWithFloat:100] forKey:@"threshold"];
