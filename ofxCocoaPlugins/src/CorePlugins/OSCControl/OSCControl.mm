@@ -61,7 +61,7 @@ NSString * SplitcapitalString(NSString *str)
     sender = new ofxOscSender();
     receiver = new ofxOscReceiver();
     
-    sender->setup("HalfdanJ-iPad.local", 8080);
+    sender->setup("10.0.1.115", 8080);
     // sender->setup("10.0.1.3", 8080);
     receiver->setup(9090);
     

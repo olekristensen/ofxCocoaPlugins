@@ -69,7 +69,12 @@
         }
         
         colorCVImage->setFromPixels(pixels, width, height);
-        *cvImage = *colorCVImage;
+        //cvCvtColor( colorCVImage->getCvImage(), cvImage->getCvImage(), CV_RGB2GRAY );
+        
+        cvImage->setFromColorImage(*colorCVImage);
+        cvImage->updateTexture();
+        
+//        *cvImage = *colorCVImage;
         
       //  cvImage->set(100);
     }

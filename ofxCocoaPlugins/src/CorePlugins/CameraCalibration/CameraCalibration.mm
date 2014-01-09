@@ -17,7 +17,7 @@
         [camerasArrayController addObserver:self forKeyPath:@"selectionIndexes" options:0 context:@"selectionCam"];
         [surfacesArrayController addObserver:self forKeyPath:@"selectionIndexes" options:0 context:@"selectionSurf"];
         
-        calibrationObjects = [NSMutableDictionary dictionary];
+        calibrationObjects = [[NSMutableDictionary dictionary] retain];
         
         changingSurface = NO;
     }
@@ -30,12 +30,12 @@
     Keystoner * keystoner = GetPlugin(Keystoner); 
     
     for(NSString * surface in [keystoner surfaces]){
-        NSMutableArray * surfaceCams = [NSMutableArray array];
+        NSMutableArray * surfaceCams = [[NSMutableArray array] retain];
         KeystoneSurface * surfaceObj = [GetPlugin(Keystoner) getSurface:surface viewNumber:0 projectorNumber:ProjNumber];
         
         
         for(Camera * cam in [cameras cameras]){
-            [surfaceCams addObject:[[CameraCalibrationObject alloc] initWithCamera:cam surface:surfaceObj]];
+            [surfaceCams addObject:[[[CameraCalibrationObject alloc] initWithCamera:cam surface:surfaceObj] retain]];
         }
         
         [calibrationObjects setObject:surfaceCams forKey:surface];

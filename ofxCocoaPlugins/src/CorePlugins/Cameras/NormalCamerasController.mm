@@ -85,7 +85,6 @@
                 //we go through its inputs to list all physical devices - as there could be more than one!
                 for(int j = 0; j < numInputs; j++){
                     
-                    
                     //if our 'device' has inputs we get their names here
                     if( deviceInputList ){
                         SGDeviceInputName inputNameRec  = (*deviceInputList)->entry[j];
@@ -96,8 +95,8 @@
                     
                     [ret addObject:[NSMutableDictionary dictionaryWithObjectsAndKeys:
                                     [NSString stringWithFormat:@"%i", deviceCount], @"guid", 
-                                    [NSString stringWithFormat:@"%s", p2cstr(pascalNameInput) ], @"desc", 
-                                    [NSString stringWithFormat:@"device %i: %s - %s", deviceCount, p2cstr(pascalName), p2cstr(pascalNameInput) ], @"name",
+                                    [NSString stringWithFormat:@"%s", pascalNameInput], @"desc",
+                                    [NSString stringWithFormat:@"device %i: %s - %s", deviceCount, pascalName, pascalNameInput ], @"name",
                                     [NSNumber numberWithInt:0], @"referenceCount",
                                     @"normal", @"type",
                                     
@@ -110,7 +109,7 @@
                 
             }else{
                 printf( "(unavailable) device[%i] %s\n",  deviceCount, p2cstr(pascalName) );
-                deviceCount++;
+                //deviceCount++;
             }
         }
         printf( "-------------------------------------\n");

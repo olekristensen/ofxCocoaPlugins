@@ -26,12 +26,12 @@
 
 @property (readonly) NSArrayController * camerasArrayController;
 @property (readonly) NSArrayController * surfacesArrayController;
-@property (readwrite) CameraCalibrationObject * selectedCalibrationObject;
+@property (retain, readwrite) CameraCalibrationObject * selectedCalibrationObject;
 @property (readwrite) BOOL changingSurface;
 @property (readwrite) BOOL drawDebug;
 @property (readwrite) BOOL drawUndistorted;
 
-@property (readonly) NSMutableDictionary * calibrationObjects;
+@property (retain, readonly) NSMutableDictionary * calibrationObjects;
 
 -(CameraCalibrationObject *) calibrationForCamera:(Camera*)camera surface:(NSString*)surface;
 @end
