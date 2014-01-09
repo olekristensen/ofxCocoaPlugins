@@ -38,6 +38,9 @@ extern ofAppBaseWindow * window;
 		//NSBundle *bundle = [NSBundle mainBundle];
 		//ofSetDataPathRoot([[[[bundle bundlePath] stringByDeletingLastPathComponent] stringByAppendingString:@"/data/"] cStringUsingEncoding:NSUTF8StringEncoding]);
         ofSetDataPathRoot("../../../data/");
+        ofSeedRandom();
+        ofResetElapsedTimeCounter();
+
         
 		//Lock used by OpenGL
 		openglLock = [[NSRecursiveLock alloc] init];

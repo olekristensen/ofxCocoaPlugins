@@ -23,22 +23,15 @@ CFStringRef CopyLocalDisplayName(CGDirectDisplayID display)
     CFStringRef        langKey, localName;
     io_connect_t displayPort;
     CFDictionaryRef dict, names;
-	
-    // ØF
-    localName = (__bridge CFStringRef)[NSString stringWithFormat:@"%d",display]; // dirty hack to get name
-    CFRetain( localName );
-    return localName;
-    // slut øf
-    
+
     localName = NULL;
     displayPort = CGDisplayIOServicePort(display);
     if ( displayPort == MACH_PORT_NULL )
         return NULL;  /* No physical device to get a name from */
-    dict = IOCreateDisplayInfoDictionary(displayPort, 0);
+    dict = IODisplayCreateInfoDictionary(displayPort, 0);
     
     names = (CFDictionaryRef) CFDictionaryGetValue( dict, CFSTR(kDisplayProductName) );
-    CFRelease(dict);
-
+    
     /* Extract all the  display name locale keys */
     langKeys = CFArrayCreateMutable( kCFAllocatorDefault, 0,
 									&kCFTypeArrayCallBacks );
@@ -46,20 +39,24 @@ CFStringRef CopyLocalDisplayName(CGDirectDisplayID display)
 							  langKeys );
     /* Get the preferred order of localizations */
     orderLangKeys = CFBundleCopyPreferredLocalizationsFromArray(langKeys);
-    CFRelease( langKeys );
-	
+
     if( orderLangKeys && CFArrayGetCount(orderLangKeys) )
     {
         langKey = (CFStringRef)CFArrayGetValueAtIndex( orderLangKeys, 0 );
+        langKey = CFStringCreateWithCString(kCFAllocatorDefault, "en_US", kCFStringEncodingASCII);
         localName = (CFStringRef)CFDictionaryGetValue( names, langKey );
         CFRetain( localName );
-
-//        CFRelease(langKey);
-
+        
+        CFRelease(langKey);
+        
     }
+    
+    CFRelease( langKeys );
+    CFRelease(dict);
+    
     if(orderLangKeys)
         CFRelease(orderLangKeys);
-
+    
     //
     return localName;
 }
@@ -255,7 +252,7 @@ CFStringRef CopyLocalDisplayName(CGDirectDisplayID display)
 					[[panelController displayPopup] setEnabled:NO];	
                     
                     
-                    [BeamSync disable];
+                    // [BeamSync disable];
                                        
 				}
 			}

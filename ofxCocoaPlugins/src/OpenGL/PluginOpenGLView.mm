@@ -78,12 +78,13 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink, const CVTime
         NSOpenGLPixelFormatAttribute attribs[] = {
             NSOpenGLPFAWindow,
             NSOpenGLPFANoRecovery,
-            NSOpenGLPFASampleBuffers, 1, //Antialias
-            NSOpenGLPFASamples, 6,
+            NSOpenGLPFASampleBuffers, 2, //Antialias
+            NSOpenGLPFASamples, 8,
             NSOpenGLPFADoubleBuffer,
             NSOpenGLPFAColorSize, 24,
             NSOpenGLPFAAlphaSize, 8,
             NSOpenGLPFADepthSize, 24,
+            /*NSOpenGLPFAOpenGLProfile, NSOpenGLProfileVersion3_2Core,*/
             
             NSOpenGLPFAAccelerated,
             0
@@ -215,12 +216,42 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink, const CVTime
             if(![controller isSetupCalled]){             
                 //Create the openframeworks context
 //                window = new ofAppCocoaWindow();
-                ofSetupOpenGL(ofPtr<ofAppBaseWindow>(new ofAppCocoaWindow()), 0, 0, 0);
-                ofSetBackgroundAuto(false);
+                //ofSetCurrentRenderer(ofGLProgrammableRenderer::TYPE);
+                ofSetupOpenGL(ofPtr<ofAppBaseWindow>(new ofAppCocoaWindow()), 640, 408, OF_WINDOW);
 
+                glewExperimental = GL_TRUE;
+                GLenum err = glewInit();
+                if (GLEW_OK != err)
+                {
+                    /* Problem: glewInit failed, something is seriously wrong. */
+                    ofLogError("ofAppRunner") << "couldn't init GLEW: " << glewGetErrorString(err);
+                    return;
+                }
+
+                
+                ofLogVerbose("ofAppRunner") << "GL ready";
+                ofLogVerbose("ofAppRunner") << "Vendor:   " << (char*)glGetString(GL_VENDOR);
+                ofLogVerbose("ofAppRunner") << "Renderer: " << (char*)glGetString(GL_RENDERER);
+                ofLogVerbose("ofAppRunner") << "Version:  " << (char*)glGetString(GL_VERSION);
+                ofLogVerbose("ofAppRunner") << "GLSL:     " << (char*)glGetString(GL_SHADING_LANGUAGE_VERSION);
+
+                if(ofGetGLProgrammableRenderer()){
+                    ofGetGLProgrammableRenderer()->setup();
+                }
+
+                ofSeedRandom();
+                ofResetElapsedTimeCounter();
+
+                //Default colors etc are now in ofGraphics - ofSetupGraphicDefaults
+                ofSetupGraphicDefaults();
+                ofSetBackgroundAuto(false);
+                ofEnableAlphaBlending();
             }
             
-
+            ofPtr<ofGLProgrammableRenderer> renderer = ofGetGLProgrammableRenderer();
+            if(renderer){
+                renderer->startRender();
+            }
             
             //Tell openframeworks the size of the window
             ofSetWindowShape([self frame].size.width, [self frame].size.height);
@@ -228,20 +259,19 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink, const CVTime
             //Reset the drawingarea
             ofBackground(0, 0, 0);
             
-			glMatrixMode(GL_TEXTURE);
-			glLoadIdentity();
+			ofMatrixMode(OF_MATRIX_TEXTURE);
+			ofLoadIdentityMatrix();
+			ofMatrixMode(OF_MATRIX_MODELVIEW);
+			ofLoadIdentityMatrix();
 			
-			glMatrixMode(GL_MODELVIEW);
-			glLoadIdentity();
-			
-			glTranslated(-1, 1, 0.0);			
-			glScaled(2, -2, 1.0);
+			ofTranslate(-1, 1, 0.0);
+			ofScale(2, -2, 1.0);
 			
 			
 			if(backingWidth != 0 && backingHeight != 0){				
-				glTranslated(0, 1, 0);
-				glScaled((float) backingWidth / [self frame].size.width,(float) backingHeight / [self frame].size.height, 1.0);	
-				glTranslated(0, -1, 0);
+				ofTranslate(0, 1, 0);
+				ofScale((float) backingWidth / [self frame].size.width,(float) backingHeight / [self frame].size.height, 1.0);
+				ofTranslate(0, -1, 0);
 			}			
 			
 
@@ -259,7 +289,11 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink, const CVTime
 			glPopMatrix();
 
             //Flush the buffer to draw to screen
-			//glFlush();
+			glFlush();
+            if(renderer){
+                renderer->finishRender();
+            }
+            
             [[self openGLContext] flushBuffer];
             
             //Add the framerate to the statsview

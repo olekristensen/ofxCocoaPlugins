@@ -133,7 +133,7 @@
 	//ofPushStyle();
 	glPushMatrix();{
 		
-		ofEnableAlphaBlending();
+		//ofEnableAlphaBlending();
 		string text = [name cStringUsingEncoding:NSUTF8StringEncoding ];
 		float resolution = 14.0;
 		float a = 1.0;

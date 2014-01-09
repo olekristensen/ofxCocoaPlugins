@@ -14,7 +14,7 @@
 	if(self = [self init]){
 		outputViews = [[NSMutableArray array] retain];
 		willDraw = YES;
-		surfaces = [NSArray arrayWithArray:_surfaces];
+		surfaces = [[NSArray arrayWithArray:_surfaces] retain];
         
         perspectives = [NSMutableDictionary dictionary];
         
@@ -857,8 +857,8 @@
 	[[globalController openglLock] lock];
 	KeystonerOutputview * selectedOutputView = [[outputViewController selectedObjects] lastObject];
 	[[selectedOutputView projectors] removeLastObject];
+	[self updateProjectorButtons];
 	[[globalController openglLock] unlock];
-	[self updateProjectorButtons];	
 }
 
 -(void) updateProjectorButtons{
@@ -866,7 +866,8 @@
 	int count = [[selectedOutputView projectors] count];
 	
 	if([projectorPicker selectedSegment] >= count && count > 0){
-		[projectorPicker setSelectedSegment:count-1];	
+		[projectorPicker setSelectedSegment:count-1];
+        [self setSelectedProjector:[projectorPicker selectedSegment]];
 	}
 	
 	[projectorPicker setSegmentCount:count];

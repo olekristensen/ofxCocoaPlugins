@@ -40,17 +40,13 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink, const CVTime
         NSOpenGLPFAWindow,
         NSOpenGLPFANoRecovery,
         NSOpenGLPFASampleBuffers, 1,
-        NSOpenGLPFASamples, 4,
+        NSOpenGLPFASamples, 8,
         NSOpenGLPFADoubleBuffer,
         NSOpenGLPFAColorSize, 24,
         NSOpenGLPFAAlphaSize, 8,
         NSOpenGLPFADepthSize, 24,
-
-//        NSOpenGLPFAAccelerated,
-
-        
-        
-        
+        /*NSOpenGLPFAOpenGLProfile, NSOpenGLProfileVersion3_2Core,*/
+        NSOpenGLPFAAccelerated,
 		(NSOpenGLPixelFormatAttribute)nil
 	};
 	
@@ -143,6 +139,12 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink, const CVTime
         [[self openGLContext] makeCurrentContext];
         
         glViewport(0, 0, [self frame].size.width , [self frame].size.height);
+        
+        ofPtr<ofGLProgrammableRenderer> renderer = ofGetGLProgrammableRenderer();
+        if(renderer){
+            renderer->startRender();
+        }
+
         if(![plugin setupCalled]){
             glClearColor(0.0, 0.0, 0.0, 0.0);
             glClear(GL_COLOR_BUFFER_BIT);
@@ -158,15 +160,16 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink, const CVTime
             glMatrixMode(GL_MODELVIEW);       
             
             glPushMatrix();
-            glTranslated(-1, 1, 0);
-            glScaled(2.0/[self frame].size.width, -2.0/[self frame].size.height, 1);
-            
+
             ofPoint tmpSize = ofGetWindowSize();
             
             ofSetWindowShape([self frame].size.width, [self frame].size.height);
             
             ofSetupScreen();
-            
+                        
+            glTranslated(0, ofGetHeight(), 0);
+            glScaled(1, -1, 1);
+
             [plugin controlDraw:drawingInformation];
             
             ofSetWindowShape(tmpSize.x, tmpSize.y);
@@ -175,6 +178,10 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink, const CVTime
         }
         
         [[self openGLContext] flushBuffer];
+
+        if(renderer){
+            renderer->finishRender();
+        }
         
         // cout << "   2 CONTROL DRAW END " << [globalController openglLock] << endl;
         

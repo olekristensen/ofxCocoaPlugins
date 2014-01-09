@@ -12,7 +12,7 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application"/>
-        <window title="GlobusVideo" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" deferred="NO" oneShot="NO" frameAutosaveName="MainWindow" animationBehavior="default" id="5" userLabel="MainWindow" customClass="MainWindow">
+        <window title="Stereo" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" deferred="NO" oneShot="NO" appearanceType="lightContent" frameAutosaveName="MainWindow" animationBehavior="default" id="5" userLabel="MainWindow" customClass="MainWindow">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" unifiedTitleAndToolbar="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="311" y="180" width="778" height="539"/>
@@ -38,7 +38,7 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <outlineView focusRingType="none" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="firstColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" emptySelection="NO" autosaveColumns="NO" autosaveName="pluginslist" rowHeight="20" indentationPerLevel="14" outlineTableColumn="688" id="664">
-                                                    <rect key="frame" x="0.0" y="0.0" width="223" height="455"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="230" height="455"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <size key="intercellSpacing" width="3" height="0.0"/>
                                                     <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -82,7 +82,7 @@
                                                                 </binding>
                                                             </connections>
                                                         </tableColumn>
-                                                        <tableColumn width="3" maxWidth="3.4028234663852886e+38" id="1141">
+                                                        <tableColumn width="10" maxWidth="3.4028234663852886e+38" id="1141">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
                                                                 <font key="font" metaFont="smallSystem"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -145,8 +145,8 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </clipView>
-                                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="663">
-                                            <rect key="frame" x="1" y="441" width="223" height="15"/>
+                                        <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="663">
+                                            <rect key="frame" x="1" y="440" width="223" height="16"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                         <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="662">
@@ -191,14 +191,14 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="552" height="222"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
-                                                    <scrollView autohidesScrollers="YES" horizontalLineScroll="32" horizontalPageScroll="10" verticalLineScroll="32" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="1789">
+                                                    <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="1789">
                                                         <rect key="frame" x="0.0" y="0.0" width="552" height="222"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <clipView key="contentView" id="3c7-fe-rGm">
                                                             <rect key="frame" x="1" y="17" width="550" height="204"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="30" rowSizeStyle="automatic" headerView="1792" viewBased="YES" id="1790">
+                                                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="1792" viewBased="YES" id="1790">
                                                                     <rect key="frame" x="0.0" y="0.0" width="550" height="204"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <size key="intercellSpacing" width="3" height="2"/>
@@ -477,7 +477,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="552" height="272"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <customView id="1161" customClass="PluginControlView">
+                                                                <customView id="1161">
                                                                     <rect key="frame" x="0.0" y="0.0" width="552" height="272"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
@@ -560,12 +560,12 @@
                                                         <font key="font" metaFont="smallSystem"/>
                                                     </buttonCell>
                                                     <connections>
-                                                        <binding destination="657" name="enabled" keyPath="selection.midiChannel" id="1281"/>
                                                         <binding destination="657" name="target" keyPath="selection" id="1256">
                                                             <dictionary key="options">
                                                                 <string key="NSSelectorName">generateMidiNumbers:</string>
                                                             </dictionary>
                                                         </binding>
+                                                        <binding destination="657" name="enabled" keyPath="selection.midiChannel" id="1281"/>
                                                     </connections>
                                                 </button>
                                                 <textField verticalHuggingPriority="750" id="1257">
@@ -839,13 +839,13 @@
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                     <connections>
+                                        <binding destination="1282" name="value" keyPath="shownPrevCueDict.startvalue" id="1428"/>
                                         <binding destination="1282" name="hidden" keyPath="shownPrevCueDict.undefinedCue" id="1539">
                                             <dictionary key="options">
                                                 <integer key="NSNullPlaceholder" value="0"/>
                                                 <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
                                             </dictionary>
                                         </binding>
-                                        <binding destination="1282" name="value" keyPath="shownPrevCueDict.startvalue" id="1428"/>
                                     </connections>
                                 </textField>
                                 <textField verticalHuggingPriority="750" id="1329">
@@ -873,12 +873,12 @@
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                     <connections>
+                                        <binding destination="1282" name="value" keyPath="shownPrevCueDict.endvalue" id="1431"/>
                                         <binding destination="1282" name="hidden" keyPath="shownPrevCueDict.fade" id="1462">
                                             <dictionary key="options">
                                                 <string key="NSValueTransformerName">NSNegateBoolean</string>
                                             </dictionary>
                                         </binding>
-                                        <binding destination="1282" name="value" keyPath="shownPrevCueDict.endvalue" id="1431"/>
                                     </connections>
                                 </textField>
                                 <textField verticalHuggingPriority="750" id="1333">
@@ -898,12 +898,12 @@
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                     <connections>
+                                        <binding destination="1282" name="value" keyPath="shownPrevCueDict.duration" id="1434"/>
                                         <binding destination="1282" name="hidden" keyPath="shownPrevCueDict.fade" id="1470">
                                             <dictionary key="options">
                                                 <string key="NSValueTransformerName">NSNegateBoolean</string>
                                             </dictionary>
                                         </binding>
-                                        <binding destination="1282" name="value" keyPath="shownPrevCueDict.duration" id="1434"/>
                                     </connections>
                                 </textField>
                             </subviews>
@@ -965,12 +965,12 @@
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                     <connections>
+                                        <binding destination="1282" name="value" keyPath="shownThisCueDict.endvalue" id="1442"/>
                                         <binding destination="1282" name="hidden" keyPath="shownThisCueDict.fade" id="1486">
                                             <dictionary key="options">
                                                 <string key="NSValueTransformerName">NSNegateBoolean</string>
                                             </dictionary>
                                         </binding>
-                                        <binding destination="1282" name="value" keyPath="shownThisCueDict.endvalue" id="1442"/>
                                     </connections>
                                 </textField>
                                 <textField verticalHuggingPriority="750" id="1350">
@@ -990,12 +990,12 @@
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                     <connections>
+                                        <binding destination="1282" name="value" keyPath="shownThisCueDict.duration" id="1455"/>
                                         <binding destination="1282" name="hidden" keyPath="shownThisCueDict.fade" id="1493">
                                             <dictionary key="options">
                                                 <string key="NSValueTransformerName">NSNegateBoolean</string>
                                             </dictionary>
                                         </binding>
-                                        <binding destination="1282" name="value" keyPath="shownThisCueDict.duration" id="1455"/>
                                     </connections>
                                 </textField>
                                 <button verticalHuggingPriority="750" id="1569">
@@ -1061,8 +1061,8 @@
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                     <connections>
-                                        <binding destination="1282" name="hidden" keyPath="shownNextCueDict.undefinedCue" id="1545"/>
                                         <binding destination="1282" name="value" keyPath="shownNextCueDict.startvalue" id="1445"/>
+                                        <binding destination="1282" name="hidden" keyPath="shownNextCueDict.undefinedCue" id="1545"/>
                                     </connections>
                                 </textField>
                                 <textField verticalHuggingPriority="750" id="1374">
@@ -1090,12 +1090,12 @@
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                     <connections>
+                                        <binding destination="1282" name="value" keyPath="shownNextCueDict.endvalue" id="1448"/>
                                         <binding destination="1282" name="hidden" keyPath="shownNextCueDict.fade" id="1483">
                                             <dictionary key="options">
                                                 <string key="NSValueTransformerName">NSNegateBoolean</string>
                                             </dictionary>
                                         </binding>
-                                        <binding destination="1282" name="value" keyPath="shownNextCueDict.endvalue" id="1448"/>
                                     </connections>
                                 </textField>
                                 <textField verticalHuggingPriority="750" id="1370">
@@ -1115,12 +1115,12 @@
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                     <connections>
+                                        <binding destination="1282" name="value" keyPath="shownNextCueDict.duration" id="1451"/>
                                         <binding destination="1282" name="hidden" keyPath="shownNextCueDict.fade" id="1473">
                                             <dictionary key="options">
                                                 <string key="NSValueTransformerName">NSNegateBoolean</string>
                                             </dictionary>
                                         </binding>
-                                        <binding destination="1282" name="value" keyPath="shownNextCueDict.duration" id="1451"/>
                                     </connections>
                                 </textField>
                                 <button id="1595">

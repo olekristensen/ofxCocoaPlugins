@@ -49,7 +49,7 @@ void ofAppCocoaWindow::setupOpenGL(int w, int h, int screenMode) {
 	
 	windowW = 320;
 	windowH = 240;
-	
+    	
 }
 
 
